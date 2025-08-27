@@ -1,0 +1,10 @@
+{
+  "appTitle": "Provider Template",
+  "homeWelcome": "Welcome to Provider Template",
+  "openCounter": "Open Counter",
+  "counterTitle": "Counter",
+  "increment": "Increment",
+  "reset": "Reset",
+  "notFound": "Not found",
+  "pageNotFound": "Page not found"
+}

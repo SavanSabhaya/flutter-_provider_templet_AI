@@ -1,0 +1,10 @@
+{
+  "appTitle": "Plantilla Provider",
+  "homeWelcome": "Bienvenido a la Plantilla Provider",
+  "openCounter": "Abrir Contador",
+  "counterTitle": "Contador",
+  "increment": "Incrementar",
+  "reset": "Reiniciar",
+  "notFound": "No encontrado",
+  "pageNotFound": "Página no encontrada"
+}

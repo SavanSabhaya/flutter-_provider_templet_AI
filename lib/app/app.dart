@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'router/app_router.dart';
+import '../l10n/app_localizations.dart';
+import 'theme/app_theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -11,11 +14,19 @@ class App extends StatelessWidget {
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Provider Template',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-        useMaterial3: true,
-      ),
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('es'),
+      ],
       routerConfig: router,
     );
   }
