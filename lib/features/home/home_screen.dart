@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,17 +7,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: AppBar(title: Text(l10n.appTitle)),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Welcome to Provider Template'),
+            Text(l10n.homeWelcome),
             const SizedBox(height: 12),
             FilledButton(
               onPressed: () => context.goNamed('counter'),
-              child: const Text('Open Counter'),
+              child: Text(l10n.openCounter),
             ),
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 import 'counter_provider.dart';
@@ -9,8 +10,9 @@ class CounterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final count = context.watch<CounterProvider>().count;
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: const Text('Counter')),
+      appBar: AppBar(title: Text(l10n.counterTitle)),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -25,12 +27,12 @@ class CounterScreen extends StatelessWidget {
               children: [
                 FilledButton(
                   onPressed: () => context.read<CounterProvider>().increment(),
-                  child: const Text('Increment'),
+                  child: Text(l10n.increment),
                 ),
                 const SizedBox(width: 12),
                 OutlinedButton(
                   onPressed: () => context.read<CounterProvider>().reset(),
-                  child: const Text('Reset'),
+                  child: Text(l10n.reset),
                 ),
               ],
             )
